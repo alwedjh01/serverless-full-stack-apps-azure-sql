@@ -20,6 +20,6 @@ jobs:
       - uses: Azure/sql-action@v1
         with:
           server-name: bus-server840307.database.windows.net
-          connection-string: Server=tcp:bus-server840307.database.windows.net,1433;Database=bus-db;User ID=cloudadmin;Password=Wedgebem01!;Encrypt=true;Connection Timeout=30;
+          connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
           # uses dacpac to deploy database schema
           dacpac-package: './Database/dacpac/bus-db.dacpac'
